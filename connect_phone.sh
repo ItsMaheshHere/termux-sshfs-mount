@@ -15,7 +15,7 @@ echo "Target: $username@$IP"
 
 # 3.Mount Storage
 mkdir -p ~/AndroidMount
-sshfs -p 8022 $username@IP:storage/emulated/0 ~/AndroidMount
+sshfs -p 8022 $username@$IP:storage/emulated/0 ~/AndroidMount
 
 echo "Success! Storage mounted "
 
