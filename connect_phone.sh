@@ -7,7 +7,7 @@ read -p "Username:" username
 # 2.Get IP
 IP=$(ip route show default | awk '{print $3}')
 if[-z "$IP"]; then
-	echo "ERROR: Could Not Find IP"
+	echo "ERROR: Could Not get IP"
 	exit 1
 fi
 
@@ -17,5 +17,8 @@ echo "Target: $username@$IP"
 mkdir -p ~/AndroidMount
 sshfs -p 8022 $username@$IP:storage/emulated/0 ~/AndroidMount
 
-echo "Success! Storage mounted "
-
+if[$? -eq 0];then
+	echo "Success! Storage mounted."
+else
+	echo "check Termux 'sshd' is running ?"
+fi
