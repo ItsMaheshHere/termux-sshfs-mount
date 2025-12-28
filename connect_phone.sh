@@ -12,7 +12,7 @@ else
 fi
 
 # 2.Get IP
-IP=$(ip route show default | awk '{print $3}')
+IP=$(ip route | grep "default via" | awk '{print $3}' | head -n 1)
 if [ -z "$IP" ]; then
 	echo "ERROR: Could Not get IP"
 	exit 1
@@ -22,7 +22,7 @@ echo "Target: $username@$IP"
 
 # 3.Mount Storage
 mkdir -p ~/AndroidMount
-sshfs -p 8022 $username@$IP:storage/emulated/0 ~/AndroidMount
+sshfs -p 8022 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $username@$IP:/storage/emulated/0 ~/AndroidMount
 
 if [ $? -eq 0 ]; then
 	echo "Success! Storage mounted."
