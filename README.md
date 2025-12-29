@@ -31,7 +31,7 @@ whoami
 sudo apt install sshfs
 
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/termux-sshfs-mount.git
+git clone https://github.com/ItsMaheshHere/termux-sshfs-mount.git
 cd termux-sshfs-mount
 
 # Make the script executable
