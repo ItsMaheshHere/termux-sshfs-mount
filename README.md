@@ -2,8 +2,6 @@
 
 A **lightweight Bash script** to wirelessly mount your Android phone's storage to Linux (Kali, Ubuntu, Arch, etc.) using **Termux** and **SSHFS**.  
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![Linux](https://img.shields.io/badge/Linux-Compatible-blue.svg)]()
-
 ✨ **Features**
 - Mount your phone without USB cables
 - Remembers your Termux username after first run
